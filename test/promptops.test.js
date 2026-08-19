@@ -1,0 +1,1 @@
+const test=require('node:test');const assert=require('node:assert/strict');const {prompts}=require('../server');test('stores versioned prompt templates',()=>{prompts.set('demo',{id:'demo',template:'Hello {{name}}',version:2,tags:['greeting']});assert.equal(prompts.get('demo').version,2);assert.deepEqual(prompts.get('demo').tags,['greeting']);});
